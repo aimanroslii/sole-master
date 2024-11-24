@@ -1,6 +1,7 @@
 import prisma from "@/app/lib/db";
 import { LoadingProductCard, ProductCard } from "./ProductCard";
 import { Suspense } from "react";
+import {unstable_noStore as noStore} from 'next/cache'
 
 async function getData() {
     // a way to create artificial timer 
@@ -38,6 +39,7 @@ export function FeaturedProducts() {
 }
 
 async function LoadFeaturedProducts() {
+  noStore();
   const data = await getData();
 
   return (
