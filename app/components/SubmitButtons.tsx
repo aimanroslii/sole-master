@@ -1,12 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Loader2, ShoppingBagIcon } from "lucide-react";
+import { Loader2, ShoppingBag } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
 interface buttonProps {
   text: string;
-
   variant?:
     | "default"
     | "destructive"
@@ -25,7 +24,7 @@ export function SubmitButton({ text, variant }: buttonProps) {
       {pending ? (
         <Button disabled variant={variant}>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Loading
+          Please Wait
         </Button>
       ) : (
         <Button variant={variant} type="submit">
@@ -43,13 +42,11 @@ export function ShoppingBagButton() {
     <>
       {pending ? (
         <Button disabled size="lg" className="w-full mt-5">
-          <Loader2 className="mr-4 h-5 w-5 animate-spin" />
-          Loading ...
+          <Loader2 className="mr-4 h-5 w-5 animate-spin" /> Please Wait
         </Button>
       ) : (
-        <Button size="lg" className="w-full mt-5">
-          <ShoppingBagIcon className="mr-4 h-5 w-5" />
-          Add to Cart
+        <Button size="lg" className="w-full mt-5" type="submit">
+          <ShoppingBag className="mr-4 h-5 w-5" /> Add to Cart
         </Button>
       )}
     </>
@@ -63,7 +60,7 @@ export function DeleteItem() {
     <>
       {pending ? (
         <button disabled className="font-medium text-primary text-end">
-          Removing ...
+          Removing...
         </button>
       ) : (
         <button type="submit" className="font-medium text-primary text-end">
@@ -74,7 +71,7 @@ export function DeleteItem() {
   );
 }
 
-export function CheckoutButton() {
+export function ChceckoutButton() {
   const { pending } = useFormStatus();
   return (
     <>

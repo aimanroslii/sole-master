@@ -36,9 +36,10 @@ export function ImageSlider({ images }: iAppProps) {
           width={600}
           height={600}
           src={images[mainImageIndex]}
-          alt="Product Image"
+          alt="Product image"
           className="object-cover w-[600px] h-[600px]"
         />
+
         <div className="absolute inset-0 flex items-center justify-between px-4">
           <Button onClick={handlePreviousClick} variant="ghost" size="icon">
             <ChevronLeft className="w-6 h-6" />
@@ -59,13 +60,13 @@ export function ImageSlider({ images }: iAppProps) {
               "relative overflow-hidden rounded-lg cursor-pointer"
             )}
             key={index}
+            onClick={() => handleImageClick(index)}
           >
             <Image
-              onClick={() => handleImageClick(index)}
-              width={100}
-              height={100}
               src={image}
               alt="Product Image"
+              width={100}
+              height={100}
               className="object-cover w-[100px] h-[100px]"
             />
           </div>

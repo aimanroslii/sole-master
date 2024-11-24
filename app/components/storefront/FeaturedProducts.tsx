@@ -1,11 +1,9 @@
 import prisma from "@/app/lib/db";
 import { LoadingProductCard, ProductCard } from "./ProductCard";
 import { Suspense } from "react";
-import {unstable_noStore as noStore} from 'next/cache'
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getData() {
-    // a way to create artificial timer 
-//   await new Promise((resolve) => setTimeout(resolve, 5000));
   const data = await prisma.product.findMany({
     where: {
       status: "published",
@@ -32,13 +30,13 @@ export function FeaturedProducts() {
     <>
       <h2 className="text-2xl font-extrabold tracking-tight">Featured Items</h2>
       <Suspense fallback={<LoadingRows />}>
-        <LoadFeaturedProducts />
+        <LoadFeaturedproducts />
       </Suspense>
     </>
   );
 }
 
-async function LoadFeaturedProducts() {
+async function LoadFeaturedproducts() {
   noStore();
   const data = await getData();
 
@@ -52,11 +50,11 @@ async function LoadFeaturedProducts() {
 }
 
 function LoadingRows() {
-    return (
-        <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <LoadingProductCard />
-            <LoadingProductCard />
-            <LoadingProductCard />
-        </div>
-    )
+  return (
+    <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <LoadingProductCard />
+      <LoadingProductCard />
+      <LoadingProductCard />
+    </div>
+  );
 }

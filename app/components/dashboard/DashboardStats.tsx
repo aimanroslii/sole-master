@@ -15,6 +15,7 @@ async function getData() {
         id: true,
       },
     }),
+
     prisma.order.findMany({
       select: {
         amount: true,
@@ -30,7 +31,7 @@ async function getData() {
 }
 
 export async function DashboardStats() {
-  const { user, products, order } = await getData();
+  const { products, user, order } = await getData();
 
   const totalAmount = order.reduce((accumalator, currentValue) => {
     return accumalator + currentValue.amount;
@@ -55,7 +56,7 @@ export async function DashboardStats() {
           <ShoppingBag className="h-4 w-4 text-blue-500" />
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold">+{order.length + 1}</p>
+          <p className="text-2xl font-bold">+{order.length}</p>
           <p className="text-xs text-muted-foreground">
             Total Sales on ShoeMarshal
           </p>
@@ -69,7 +70,7 @@ export async function DashboardStats() {
         <CardContent>
           <p className="text-2xl font-bold">{products.length}</p>
           <p className="text-xs text-muted-foreground">
-            Total Products Created
+            Total Products created
           </p>
         </CardContent>
       </Card>

@@ -41,20 +41,19 @@ export function ProductCard({ item }: iAppProps) {
         <CarouselPrevious className="ml-16" />
         <CarouselNext className="mr-16" />
       </Carousel>
+
       <div className="flex justify-between items-center mt-2">
         <h1 className="font-semibold text-xl">{item.name}</h1>
-        <h3
-          className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs
-        font-medium text-primary ring-1 ring-inset ring-primary/10"
-        >
+        <h3 className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/10">
           ${item.price}
         </h3>
       </div>
       <p className="text-gray-600 text-sm mt-2 line-clamp-2">
         {item.description}
       </p>
+
       <Button asChild className="w-full mt-5">
-        <Link href={`/product/${item.id}`}>Browse More</Link>
+        <Link href={`/product/${item.id}`}>Learn More!</Link>
       </Button>
     </div>
   );
@@ -65,12 +64,10 @@ export function LoadingProductCard() {
     <div className="flex flex-col">
       <Skeleton className="w-full h-[330px]" />
       <div className="flex flex-col mt-2 gap-y-2">
-        <Skeleton className="h-4 w-full"/>
-        <Skeleton className="w-full h-6"/>
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="w-full h-6" />
       </div>
-      <div>
-        <Skeleton className="w-full h-10 mt-5" />
-      </div>
+      <Skeleton className="w-full h-10 mt-5" />
     </div>
-  )
+  );
 }
