@@ -18,7 +18,7 @@ interface buttonProps {
     | undefined;
 }
 
-export function SubmitButton({text, variant} : buttonProps) {
+export function SubmitButton({ text, variant }: buttonProps) {
   const { pending } = useFormStatus();
   return (
     <>
@@ -37,40 +37,57 @@ export function SubmitButton({text, variant} : buttonProps) {
 }
 
 export function ShoppingBagButton() {
-  const {pending} = useFormStatus();
+  const { pending } = useFormStatus();
 
   return (
     <>
-    {
-      pending ? (
+      {pending ? (
         <Button disabled size="lg" className="w-full mt-5">
-          <Loader2 className="mr-4 h-5 w-5 animate-spin" />Loading ...
+          <Loader2 className="mr-4 h-5 w-5 animate-spin" />
+          Loading ...
         </Button>
-
       ) : (
         <Button size="lg" className="w-full mt-5">
-          <ShoppingBagIcon className="mr-4 h-5 w-5" />Add to Cart
+          <ShoppingBagIcon className="mr-4 h-5 w-5" />
+          Add to Cart
         </Button>
-      )
-    }
+      )}
     </>
-  )
+  );
 }
 
 export function DeleteItem() {
-  const {pending} = useFormStatus()
+  const { pending } = useFormStatus();
 
   return (
     <>
-    {pending ? (
+      {pending ? (
         <button disabled className="font-medium text-primary text-end">
-        Removing ...
-      </button>
-    ):(
-      <button type="submit" className="font-medium text-primary text-end">
-      Delete
-    </button>
-    )}
+          Removing ...
+        </button>
+      ) : (
+        <button type="submit" className="font-medium text-primary text-end">
+          Delete
+        </button>
+      )}
     </>
-  )
+  );
+}
+
+export function CheckoutButton() {
+  const { pending } = useFormStatus();
+  return (
+    <>
+      {pending ? (
+        <Button disabled size="lg" className="w-full mt-5">
+          <Loader2 className="mr-2 h-5 w-5 animate-spin"/>
+          Loading ...
+        </Button>
+      ) : (
+        <Button type="submit" size="lg" className="w-full mt-5">
+          Checkout
+        </Button>
+      )}
+    </>
+  );
 }

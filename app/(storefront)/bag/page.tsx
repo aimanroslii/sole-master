@@ -1,5 +1,5 @@
-import { delItem } from "@/app/actions";
-import { DeleteItem } from "@/app/components/SubmitButtons";
+import { checkOut, delItem } from "@/app/actions";
+import { CheckoutButton, DeleteItem } from "@/app/components/SubmitButtons";
 import { Cart } from "@/app/lib/interfaces";
 import { redis } from "@/app/lib/redis";
 import { Button } from "@/components/ui/button";
@@ -27,15 +27,17 @@ export default async function BagRoute() {
 
   return (
     <div className="max-w-2xl mx-auto mt-10 min-h-[55vh]">
-      {cart?.items.length === 0 ? (
+      {!cart || !cart.items || cart.items.length === 0 ? (
         <div className="flex min-h-[400px] flex-col items-center justify-center rounded-lg border-dashed p-8 text-center mt-20">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-                <ShoppingBagIcon className="w-10 h-10 text-primary" />
-            </div>
-            <h2 className="mt-6 mb-8 text-xl font-semibold">Shopping Cart is Empty</h2>
-            <Button asChild>
-                <Link href="/">Shop Now!</Link>
-            </Button>
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+            <ShoppingBagIcon className="w-10 h-10 text-primary" />
+          </div>
+          <h2 className="mt-6 mb-8 text-xl font-semibold">
+            Shopping Cart is Empty
+          </h2>
+          <Button asChild>
+            <Link href="/">Shop Now!</Link>
+          </Button>
         </div>
       ) : (
         <div className="flex flex-col gap-y-10">
@@ -70,9 +72,9 @@ export default async function BagRoute() {
               <p>Subtotal:</p>
               <p>${new Intl.NumberFormat("en-US").format(totalPrice)}</p>
             </div>
-            <Button size="lg" className="w-full mt-5">
-              Checkout
-            </Button>
+            <form action={checkOut}>
+              <CheckoutButton />
+            </form>
           </div>
         </div>
       )}
