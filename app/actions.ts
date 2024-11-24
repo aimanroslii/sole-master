@@ -15,7 +15,7 @@ export async function createProduct(prevState: unknown, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "jan@alenix.de") {
+  if (!user || user.email !== "aimandeone@gmail.com") {
     return redirect("/");
   }
 
@@ -50,7 +50,7 @@ export async function editProduct(prevState: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "jan@alenix.de") {
+  if (!user || user.email !== "aimandeone@gmail.com") {
     return redirect("/");
   }
 
@@ -89,7 +89,7 @@ export async function deleteProduct(formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "jan@alenix.de") {
+  if (!user || user.email !== "aimandeone@gmail.com") {
     return redirect("/");
   }
 
@@ -106,7 +106,7 @@ export async function createBanner(prevState: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "jan@alenix.de") {
+  if (!user || user.email !== "aimandeone@gmail.com") {
     return redirect("/");
   }
 
@@ -132,7 +132,7 @@ export async function deleteBanner(formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "jan@alenix.de") {
+  if (!user || user.email !== "aimandeone@gmail.com") {
     return redirect("/");
   }
 
@@ -267,11 +267,11 @@ export async function checkOut() {
       success_url:
         process.env.NODE_ENV === "development"
           ? "http://localhost:3000/payment/success"
-          : "https://shoe-marshal.vercel.app/payment/success",
+          : "https://sm-commerce-eight.vercel.app/payment/success",
       cancel_url:
         process.env.NODE_ENV === "development"
           ? "http://localhost:3000/payment/cancel"
-          : "https://shoe-marshal.vercel.app/payment/cancel",
+          : "https://sm-commerce-eight.vercel.app/payment/cancel",
       metadata: {
         userId: user.id,
       },
