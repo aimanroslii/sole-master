@@ -15,7 +15,7 @@ export async function createProduct(prevState: unknown, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "aimandeone@gmail.com") {
+  if (!user || user.email !== "jan@alenix.de") {
     return redirect("/");
   }
 

@@ -10,7 +10,7 @@ export const categories = [
     name: "women",
   },
   {
-    id: 2,
+    id: 3,
     title: "Kids",
     name: "kids",
   },

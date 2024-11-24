@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {unstable_noStore as noStore} from 'next/cache'
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getData() {
   const data = await prisma.order.findMany({
@@ -70,8 +70,12 @@ export default async function OrdersPage() {
                 </TableCell>
                 <TableCell>Order</TableCell>
                 <TableCell>{item.status}</TableCell>
-                <TableCell>{new Intl.DateTimeFormat('en-US').format(item.createdAt)}</TableCell>
-                <TableCell className="text-right">${new Intl.NumberFormat('en-US').format(item.amount/100)}</TableCell>
+                <TableCell>
+                  {new Intl.DateTimeFormat("en-US").format(item.createdAt)}
+                </TableCell>
+                <TableCell className="text-right">
+                  ${new Intl.NumberFormat("en-US").format(item.amount / 100)}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

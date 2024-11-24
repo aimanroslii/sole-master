@@ -1,8 +1,8 @@
 "use client";
 
-import { createBanner, createProduct } from "@/app/actions";
+import { createBanner } from "@/app/actions";
 import { SubmitButton } from "@/app/components/SubmitButtons";
-import { UploadDropzone } from "@/app/lib/uploadthing";
+import { UploadDropzone } from "@/app/lib/uplaodthing";
 import { bannerSchema } from "@/app/lib/zodSchemas";
 import { Button } from "@/components/ui/button";
 import {
@@ -42,7 +42,7 @@ export default function BannerRoute() {
     <form id={form.id} onSubmit={form.onSubmit} action={action}>
       <div className="flex items-center gap-x-4">
         <Button variant="outline" size="icon" asChild>
-          <Link href="/dashbord/banner">
+          <Link href="/dashboard/products">
             <ChevronLeft className="w-4 h-4" />
           </Link>
         </Button>
@@ -63,12 +63,13 @@ export default function BannerRoute() {
                 key={fields.title.key}
                 defaultValue={fields.title.initialValue}
                 type="text"
-                placeholder="Create Title for Banner"
+                placeholder="Create title for Banner"
               />
               <p className="text-red-500">{fields.title.errors}</p>
             </div>
+
             <div className="flex flex-col gap-3">
-              <Label>Images</Label>
+              <Label>Image</Label>
               <input
                 type="hidden"
                 value={image}
@@ -95,6 +96,7 @@ export default function BannerRoute() {
                   endpoint="bannerImageRoute"
                 />
               )}
+
               <p className="text-red-500">{fields.imageString.errors}</p>
             </div>
           </div>

@@ -26,7 +26,7 @@ import {
 import { MoreHorizontal, PlusCircle, User2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {unstable_noStore as noStore} from 'next/cache'
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getData() {
   const data = await prisma.banner.findMany({
@@ -55,7 +55,7 @@ export default async function BannerRoute() {
       <Card className="mt-5">
         <CardHeader>
           <CardTitle>Banners</CardTitle>
-          <CardDescription>Manage your banner</CardDescription>
+          <CardDescription>Manage your banners</CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
@@ -66,13 +66,20 @@ export default async function BannerRoute() {
                 <TableHead className="text-end">Actions</TableHead>
               </TableRow>
             </TableHeader>
+
             <TableBody>
               {data.map((item) => (
                 <TableRow key={item.id}>
                   <TableCell>
-                    <Image alt="Product Image" src={item.imageString} width={64} height={64} className="rounded-lg object-cover h-16 w-16" />
+                    <Image
+                      alt="Product Image"
+                      src={item.imageString}
+                      width={64}
+                      height={64}
+                      className="rounded-lg object-cover h-16 w-16"
+                    />
                   </TableCell>
-                  <TableCell>{item.title}</TableCell>
+                  <TableCell className="font-medium">{item.title}</TableCell>
                   <TableCell className="text-end">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -83,8 +90,11 @@ export default async function BannerRoute() {
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
                         <DropdownMenuSeparator />
+
                         <DropdownMenuItem asChild>
-                          <Link href={`/dashboard/banner/${item.id}/delete`}>Delete</Link>
+                          <Link href={`/dashboard/banner/${item.id}/delete`}>
+                            Delete
+                          </Link>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
