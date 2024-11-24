@@ -35,8 +35,6 @@ export async function POST(req : Request) {
 
     
             await redis.del(`cart-${session.metadata?.userId}`);
-            revalidatePath("/bag");
-            revalidatePath("/", "layout");
             break;
         }
         default: {
