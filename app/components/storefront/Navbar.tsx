@@ -48,7 +48,7 @@ export async function Navbar() {
               email={user.email as string}
               name={user.given_name as string}
               userImage={
-                user.picture ?? `https://avatar.vercel.sh/${user.given_name}`
+                user.picture ?? "null"
               }
             />
           </>

@@ -23,7 +23,7 @@ export function UserDropdown({ email, name, userImage }: iAppProps) {
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-10 w-10">
             <AvatarImage src={userImage} alt="User Image" />
-            <AvatarFallback>{name.slice(0, 3)}</AvatarFallback>
+            <AvatarFallback>{name.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
