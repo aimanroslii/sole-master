@@ -8,8 +8,20 @@ import { ourFileRouter } from "./api/uploadthing/core";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SoleMaster",
-  description: "Sole Master store front",
+  title: "SoleMaster - Premium Sneakers Store",
+  description: "Discover premium sneakers and streetwear at SoleMaster. Shop limited editions, classic kicks, and more.",
+  keywords: [
+    "sneakers",
+    "streetwear",
+    "limited edition shoes",
+    "premium sneakers",
+    "SoleMaster",
+    "Nike",
+    "Adidas",
+    "Jordan",
+    "Yeezy",
+    "sneaker store online"
+  ],
   icons: {
     icon: [
       {
