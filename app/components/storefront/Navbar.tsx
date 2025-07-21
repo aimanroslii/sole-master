@@ -24,7 +24,7 @@ export async function Navbar() {
     <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
       <div className="flex items-center">
         <Link href="/">
-          <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Apa Do Je</h1>
+          <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">SoleMaster</h1>
           {/* <Image
             src="/logo/soleMaster_whitebg.png"
             alt="Logo Sole Master"
