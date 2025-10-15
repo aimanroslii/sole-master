@@ -22,6 +22,7 @@ Shoe Marshall is an e-commerce platform where you can explore and buy shoes onli
 - Add to cart and complete a smooth checkout flow
 - Secure authentication using Oauth2, login and create an account safely
 - Dashboard implemented with role-based access control
+- Responsive website
 
 ## 👨🏻‍🍳 The Process
 
@@ -42,3 +43,8 @@ After integration, I store the collections of product through dashboard, and ran
 - Added inventory management to monitor stock levels and automatically disable out-of-stock items
 
 ## 🍿 Video
+
+https://github.com/user-attachments/assets/349deeb5-30f6-4c33-8137-a4ffce6360c2
+
+https://github.com/user-attachments/assets/ffdc2026-d383-427a-a1b2-356b796a9389
+
