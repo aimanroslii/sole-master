@@ -1,4 +1,4 @@
-# 👟 Shoe Marshall
+# 👟 Sole Master
 
 Shoe Marshall is an e-commerce platform where you can explore and buy shoes online. It comes with an admin dashboard that lets you easily manage banners, store items, and product details. You can also analytics like total revenue and customer payments to track your store's performance. 
 
@@ -44,7 +44,12 @@ After integration, I store the collections of product through dashboard, and ran
 
 ## 🍿 Video
 
-https://github.com/user-attachments/assets/349deeb5-30f6-4c33-8137-a4ffce6360c2
+https://github.com/user-attachments/assets/d574067f-0cb3-454c-8525-1f799a3c8a89
 
-https://github.com/user-attachments/assets/ffdc2026-d383-427a-a1b2-356b796a9389
+https://github.com/user-attachments/assets/f76a59c1-09ce-4950-933c-ced0084d36dd
+
+
+
+
+
 
