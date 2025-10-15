@@ -60,7 +60,7 @@ async function getData(productCategory: string) {
       });
 
       return {
-        title: "Products to Women",
+        title: "Products for Women",
         data: data,
       };
     }
