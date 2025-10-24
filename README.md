@@ -1,6 +1,6 @@
 # 👟 Sole Master
 
-Shoe Marshall is an e-commerce platform where you can explore and buy shoes online. It comes with an admin dashboard that lets you easily manage banners, store items, and product details. You can also analytics like total revenue and customer payments to track your store's performance. 
+Sole Master is an e-commerce platform where you can explore and buy shoes online. It comes with an admin dashboard that lets you easily manage banners, store items, and product details. You can also analytics like total revenue and customer payments to track your store's performance. 
 
 ## 📦 Technologies
 
